@@ -1,3 +1,7 @@
 {
-    "jestrunner.jestCommand": "yarn test"
+    "jestrunner.jestCommand": "yarn test",
+    "code-runner.executorMap": {
+        "typescript": "node_modules/.bin/ts-node",
+        
+    }
 }
