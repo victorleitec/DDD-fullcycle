@@ -1,16 +1,13 @@
-import { Column, PrimaryKey, Table } from "sequelize-typescript";
+import { Column, Model, PrimaryKey, Table } from "sequelize-typescript";
 
 @Table({ tableName: "customers", timestamps: false })
-export default class CustomerModel {
+export default class CustomerModel extends Model {
   @PrimaryKey
   @Column
   declare id: string;
 
   @Column({ allowNull: false })
   declare name: string;
-
-  @Column({ allowNull: false })
-  declare email: string;
 
   @Column({ allowNull: false })
   declare street: string;
