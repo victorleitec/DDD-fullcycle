@@ -13,7 +13,7 @@ describe("Order unit tests", () => {
     }).toThrowError("CustomerId is required");
   });
 
-  it("should throw error when order items quantity is 0", () => {
+  it("should throw error when checkout items quantity is 0", () => {
     expect(() => {
       let order = new Order("123", "123", []);
     }).toThrowError("Items are required");

@@ -1,16 +1,16 @@
 import { Sequelize } from "sequelize-typescript";
-import Address from "../../domain/customer/value-object/address";
-import Customer from "../../domain/customer/entity/customer";
-import Order from "../../domain/checkout/entity/order";
-import OrderItem from "../../domain/checkout/entity/order_item";
-import Product from "../../domain/product/entity/product";
-import CustomerModel from "../db/sequelize/model/customer.model";
-import OrderItemModel from "../db/sequelize/model/order-item.model";
-import OrderModel from "../db/sequelize/model/order.model";
-import ProductModel from "../db/sequelize/model/product.model";
-import { CustomerRepository } from "./customer.repository";
+import Address from "../../../../domain/customer/value-object/address";
+import Customer from "../../../../domain/customer/entity/customer";
+import Order from "../../../../domain/checkout/entity/order";
+import OrderItem from "../../../../domain/checkout/entity/order_item";
+import Product from "../../../../domain/product/entity/product";
+import CustomerModel from "../../../customer/repository/sequelize/customer.model";
+import OrderItemModel from "./order-item.model";
+import OrderModel from "./order.model";
+import ProductModel from "../../../product/repository/sequelize/product.model";
+import { CustomerRepository } from "../../../customer/repository/sequelize/customer.repository";
 import { OrderRepository } from "./order.repository";
-import { ProductRepository } from "./product.repository";
+import { ProductRepository } from "../../../product/repository/sequelize/product.repository";
 
 describe("Order repository test", () => {
   let sequelize: Sequelize;
@@ -36,7 +36,7 @@ describe("Order repository test", () => {
     await sequelize.close();
   });
 
-  it("should create a new order", async () => {
+  it("should create a new checkout", async () => {
     const customerRepository = new CustomerRepository();
     const customer = new Customer("c1", "Customer 1");
     const address = new Address("Street 1", 1, "Zipcode 1", "City 1");

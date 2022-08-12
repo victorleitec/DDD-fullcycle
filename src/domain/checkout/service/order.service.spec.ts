@@ -4,7 +4,7 @@ import OrderItem from "../entity/order_item";
 import OrderService from "./order.service";
 
 describe("Order service unit tests", () => {
-  it("should place an order", () => {
+  it("should place an checkout", () => {
     const customer = new Customer("c1", "Customer 1");
     const item1 = new OrderItem("i1", "p1", "Item 1", 10, 1);
 
